@@ -4,6 +4,22 @@
  * @param {*} array - The array of items.
  * @returns {Boolean}
  */
-export default function hasValuesFromArray(set, array) {
-  return array.every((value) => set.has(value));
+function cleanSet(set, startString) {
+  if (!startString || typeof startString !== "string") {
+    return "";
+  }
+
+  let result = "";
+  for (const value of set) {
+    if (value.startsWith(startString)) {
+      if (result) {
+        result += "-";
+      }
+      result += value.slice(startString.length);
+    }
+  }
+
+  return result;
 }
+
+export default cleanSet;
