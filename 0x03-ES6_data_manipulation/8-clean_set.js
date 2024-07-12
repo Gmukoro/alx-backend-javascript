@@ -5,21 +5,18 @@
  * @returns {Boolean}
  */
 function cleanSet(set, startString) {
-  if (!startString || typeof startString !== "string") {
+  if (typeof startString !== "string" || startString === "") {
     return "";
   }
 
-  let result = "";
+  const result = [];
   for (const value of set) {
     if (value.startsWith(startString)) {
-      if (result) {
-        result += "-";
-      }
-      result += value.slice(startString.length);
+      result.push(value.slice(startString.length));
     }
   }
 
-  return result;
+  return result.join("-");
 }
 
 export default cleanSet;
