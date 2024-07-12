@@ -4,7 +4,7 @@
  *   id: Number,
  *   firstName: String,
  *   location: String
- * }[]} students - The list of students.
+ * }[]} students - The list of studnts.
  * @param {*} city - The city of studnts.
  * @param {{
  *   studentId: Number,
